@@ -1,17 +1,25 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
+		<!-- <image class="logo" src="/static/logo.png"></image> -->
 		<view class="text-area">
-			<text class="title">{{title}}</text>
+			<uni-nav-bar>
+				<view slot="left">iMoney</view>
+				<view slot="right">
+					<div class='nav-right'>
+						<span class='money'>￥1.00 </span>
+						<span class='getcash'>立即提现 ＞</span>
+					</div></view>
+			</uni-nav-bar>
 		</view>
 	</view>
 </template>
 
 <script>
+	import uniNavBar from "@/components/uni-nav-bar/uni-nav-bar.vue"
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: '首页'
 			}
 		},
 		onLoad() {
@@ -19,11 +27,12 @@
 		},
 		methods: {
 
-		}
+		},
+		components: {uniNavBar}
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
 	.content {
 		display: flex;
 		flex-direction: column;
@@ -31,22 +40,16 @@
 		justify-content: center;
 	}
 
-	.logo {
-		height: 200upx;
-		width: 200upx;
-		margin-top: 200upx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50upx;
-	}
-
 	.text-area {
 		display: flex;
 		justify-content: center;
+		.nav-right{
+			min-width:180px;
+			.money{
+				margin-right:3px;
+			}
+			.getcash{}
+		}
 	}
 
-	.title {
-		font-size: 36upx;
-		color: #8f8f94;
-	}
 </style>
