@@ -70,6 +70,7 @@ export default {
   components: {
     uniNavBar,
 	uniIcons,
+	uniTabs,
 	xScrollList
   }
 };
